@@ -24,7 +24,10 @@ addButton.addEventListener('click',()=>addItems())
 
 function renderItems(){
   loadStorage();
+  document.querySelector(".list-items").innerHTML=""
+  
   todoItems.forEach((todoItem, index) => {
+    
     document.querySelector(".list-items").innerHTML+=
       `
       <li class="list-item" data-index="${index}">
@@ -34,8 +37,24 @@ function renderItems(){
             <img src="./images/trash3.svg" class="trash-js" alt="Delete">
           </div>
         </li>
-      `    
+        
+      `
+     
   });
+
+  const deleteButtons = document.querySelectorAll(".trash-js")
+
+  deleteButtons.forEach((deleteButton) => {
+  deleteButton.addEventListener('click',
+    (event) => {
+      const listItem = event.target.closest(".list-item"); // Find the closest <li> element
+      const index = listItem.dataset.index; // Get the data-index from the <li>
+      
+      deleteItem(index); // Call delete function with index
+    }
+  )
+});
+
 }
 
 function addItems(){
@@ -76,14 +95,21 @@ document.querySelector(".todo-input-field-js").addEventListener("keydown", (even
 
 //The delete function
 
-deleteButton = document.querySelector(".trash-js")
-deleteButton.addEventListener('click',()=>deleteItem())
 
-function deleteItem(){  
-  const listItem = target.closest(".list-item"); // Find the closest <li> element
-  if (listItem) {
-    console.log(listItem.dataset.index); // Log the data-index value
+function deleteItem(index){  
+      
+  const storedItems = JSON.parse(localStorage.getItem("todoItems")); // Retrieve and parse the array
+  if (storedItems && storedItems.length > index) { // Check if the index exists
+    storedItems.splice(index, 1); // Remove the item at the specified index
+    localStorage.setItem("todoItems", JSON.stringify(storedItems)); // Update localStorage
+
+    console.log(JSON.parse(localStorage.getItem("todoItems")))
+    renderItems(); // Re-render the list to reflect the changes
+  } 
+  else {
+    console.log(`Index ${index} does not exist in localStorage.`);
   }
+
 }
 
  
