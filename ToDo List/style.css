@@ -75,6 +75,9 @@ h4{
   /*display: none;*/
 
 }
+.crossed{
+  text-decoration: line-through;
+}
 
 .ul li{
   list-style:none;

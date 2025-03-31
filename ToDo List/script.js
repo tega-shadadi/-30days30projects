@@ -25,15 +25,15 @@ addButton.addEventListener('click',()=>addItems())
 function renderItems(){
   loadStorage();
   document.querySelector(".list-items").innerHTML=""
-  
+
   todoItems.forEach((todoItem, index) => {
     
     document.querySelector(".list-items").innerHTML+=
       `
       <li class="list-item" data-index="${index}">
-          <span>${todoItem}</span>
+          <span class="todo-text-js">${todoItem}</span>
           <div>
-            <img src="./images/pen-fill.svg" alt="Edit">
+            <img src="./images/pen-fill.svg" class="pen-js" alt="Edit">
             <img src="./images/trash3.svg" class="trash-js" alt="Delete">
           </div>
         </li>
@@ -41,7 +41,7 @@ function renderItems(){
       `
      
   });
-
+  //Adding Event listener to trash Icon and running the delete functions
   const deleteButtons = document.querySelectorAll(".trash-js")
 
   deleteButtons.forEach((deleteButton) => {
@@ -53,7 +53,20 @@ function renderItems(){
       deleteItem(index); // Call delete function with index
     }
   )
-});
+  });
+
+  //Adding Event listeners to all pen-icons for strike-through function
+  penButtons=document.querySelectorAll(".pen-js")
+  penButtons.forEach((penButton)=>(
+    penButton.addEventListener('click',(event)=>{
+      const listItem = event.target.closest(".list-item"); // Find the closest <li> element
+      const todoText = listItem.querySelector(".todo-text-js"); // Get the <span> element with the text
+      const index = listItem.dataset.index; // Get the data-index from the <li>
+      strikeThrough(index, todoText); // Pass both index and todoText to the function
+    })
+  ))
+
+
 
 }
 
@@ -112,4 +125,10 @@ function deleteItem(index){
 
 }
 
- 
+ //the strikeThrough function whenever the pen icon is clicked
+
+function strikeThrough(index, todoText){
+  // Toggle the "crossed" class to strike through the text
+  todoText.classList.toggle("crossed");
+
+}
