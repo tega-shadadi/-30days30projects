@@ -29,11 +29,11 @@ function renderItems(){
   loadStorage();
   document.querySelector(".list-items").innerHTML=""
 
-  todoItems.forEach((todoItem, index) => {
+  todoItems.slice().reverse().forEach((todoItem, index) => {
     
     document.querySelector(".list-items").innerHTML+=
       `
-      <li class="list-item" data-index="${index}">
+      <li class="list-item" data-index="${todoItems.length - 1 - index}">
           <span class="todo-text-js">${todoItem}</span>
           <div>
             <img src="./images/pen-fill.svg" class="pen pen-js" alt="Edit">

@@ -7,7 +7,8 @@
 }
 
 body{
-  background-color:#78c1f3;
+  /*background-color:#78c1f3;*/
+  background-color:#e9acda;
   font-family: "poppins",sans-serif;
   display: flex;
   align-items: center;
@@ -21,10 +22,18 @@ body{
 
 }
 
-.head-icon{
+.head-icon {
 margin-left: 20px;
 height: 40px;
 }
+
+.fire-icon{
+  height: 40px;
+  width: 40px;
+  margin-left: 0px;
+}
+
+
 
 .container{
  
@@ -82,6 +91,28 @@ h4{
 
 .delete-appear-js{
   display: block;
+}
+
+.trash-js{
+  cursor: pointer;
+  height: 100% ;
+  width: 60px;
+  border-radius:40px; /* Round only the right corners */
+  box-sizing: border-box; /* Ensure proper sizing */
+  height: 100%;
+  
+  
+}
+
+.trash-js img {
+  height: 24px; /* Adjust the size of the trash icon */
+  width: 24px;
+  
+}
+
+.trash-icon {
+  stroke: red; /* Set the outline color to red */
+  stroke-width: 2; /* Adjust the thickness of the outline */
 }
 
 .disappear{
