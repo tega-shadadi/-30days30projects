@@ -73,8 +73,26 @@ h4{
   text-align: center;
   color: limegreen;
   /*display: none;*/
+}
+
+.delete-disappear{
+  color: rgb(240, 77, 77);
+  display: none;
+}
+
+.delete-appear-js{
+  display: block;
+}
+
+.disappear{
+  display: none;
 
 }
+
+.appear-js{
+  display: block;
+}
+
 .crossed{
   text-decoration: line-through;
 }
@@ -93,12 +111,18 @@ h4{
   padding: 0;
   background-color:#dad8d8;
   display: flex;
-  align-items: center;justify-content:space-between;
+  align-items: center;
+  justify-content:space-between;
   padding: 0 15px;
   height: 60px;
   padding-left: 2%;
   margin: 10px;
   box-sizing: border-box;
+}
+
+.list-item .todo-text-js {
+  flex: 1; /* Allow the text to take up available space */
+  word-wrap: break-word; /* Ensure long text wraps to the next line */
 }
 
 .list-item img {

@@ -20,7 +20,10 @@ renderItems();
 //Adding Event listener to Add button
 const addButton = document.querySelector(".input-plus-icon-js")
 
-addButton.addEventListener('click',()=>addItems())
+addButton.addEventListener('click',()=>{
+  addItems();
+  notify();
+})
 
 function renderItems(){
   loadStorage();
@@ -33,8 +36,8 @@ function renderItems(){
       <li class="list-item" data-index="${index}">
           <span class="todo-text-js">${todoItem}</span>
           <div>
-            <img src="./images/pen-fill.svg" class="pen-js" alt="Edit">
-            <img src="./images/trash3.svg" class="trash-js" alt="Delete">
+            <img src="./images/pen-fill.svg" class="pen pen-js" alt="Edit">
+            <img src="./images/trash3.svg" class="trash trash-js" alt="Delete">
           </div>
         </li>
         
@@ -50,7 +53,8 @@ function renderItems(){
       const listItem = event.target.closest(".list-item"); // Find the closest <li> element
       const index = listItem.dataset.index; // Get the data-index from the <li>
       
-      deleteItem(index); // Call delete function with index
+      deleteItem(index);
+      notifyDelete(); // Call delete function with index
     }
   )
   });
@@ -102,7 +106,8 @@ function loadStorage() {
 
 document.querySelector(".todo-input-field-js").addEventListener("keydown", (event) => {
   if (event.key === "Enter") {
-    addItems(); // Call the same function as the "+" button
+    addItems();
+    notify(); // Call the same function as the "+" button
   }
 });
 
@@ -118,6 +123,7 @@ function deleteItem(index){
 
     console.log(JSON.parse(localStorage.getItem("todoItems")))
     renderItems(); // Re-render the list to reflect the changes
+    notifyDelete();
   } 
   else {
     console.log(`Index ${index} does not exist in localStorage.`);
@@ -132,3 +138,25 @@ function strikeThrough(index, todoText){
   todoText.classList.toggle("crossed");
 
 }
+
+function notify(){
+  let notificationText = document.querySelector(".disappear");
+
+  notificationText.classList.add("appear-js");
+
+  setTimeout(() => {
+      notificationText.classList.remove("appear-js");
+  }, 2000); // 2000 milliseconds = 2 seconds
+
+
+}
+
+function notifyDelete(){
+  let notificationText = document.querySelector(".delete-disappear");
+  notificationText.classList.add("delete-appear-js");
+  setTimeout(()=>{
+    notificationText.classList.remove("delete-appear-js")
+  }, 2000);
+}
+//notificationText = document.querySelector(".delete-disappear")
+//console.log(notificationText.classList.add("delete-appear-js"));
