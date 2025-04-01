@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #691b56;
+  display: flex; /* Make the body a flex container */
+  justify-content: center; /* Center horizontally */
+  margin: 0; /* Remove default margin */
+
+}
+
+  .container{
+    background-color: white;
+    padding: 4%;
+    border-radius: 10px;
+    width: 500px;
+    margin: 10px;
+    
+  }
+  
+  
+  .container span {
+    display: inline-block; /* Ensures spans behave like inline elements */
+    text-align: center; /* Centers the content inside each span */
+    margin: 0 10px; /* Adds spacing between spans */
+  }
+
+  .container span div {
+    display: inline-block; /* Prevents divs from breaking onto a new line */
+  }
+
+  .step-title {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Adds space between child elements */
+    justify-content: space-between;
+    width: 405px;
+    padding-left: 0px;
+
+  }
+
+  h2 {
+    color: #691b56;
+    font-weight: 400;
+
+    
+  }
+  h5{
+    opacity: 0.5;
+  }
+
+ .fade {
+    opacity: 0.5;
+    margin-right:10px
+
+  }
+
+  input{
+    width: 400px;
+    height:40px;
+    border-radius: 5px;
+    border-color: #dcdcdc;
+    border: 1px solid #dcdcdc; /* Light gray border */
+    box-shadow: none; /* Removes any default shadow */
+    outline: none; /* Removes the default focus outline */
+    padding-left: 5px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    font-size: 16px; /* Increases the font size for better readability */
+    line-height: 1.5; /* Adjusts the line height for better spacing */
+
+  }
+
+  button{
+    margin-right: 50px;
+    margin-bottom: 20px;
+    padding:5px 10px 5px 10px;
+    width: 160px;
+    background-color: #691b56;
+    border: none;
+    border-radius: 5px;
+    height: 40px;
+    color: white;
+  }
+
+  .next-button {
+    display: block; /* Makes the button take up the full width of its container */
+    margin-top: 10px; /* Adds some space above the button */
+    margin-left: auto;
+    
+  }
+
+  .previous-button {
+    margin-right: 80px;
+  }
+
+  .two-buttons {
+    display: flex;
+    margin-top: 10px;
+    
+  }
+
+  .success{
+    text-align: center;
+    width: 100%; /* Ensure it spans the full width of the parent */
+    height: 100%;
+    margin: 0 auto;
+    
+  }
+
+  .same-color{
+    color: #691b56;
+  }
+  .fade2{
+    font-weight: 500;
+    opacity: 0.8;
+  }
+  .bold{
+    font-weight: 700;
+  }
+
+  .checkmark{
+    border: none;
+    fill: #691b56;
+    height: 200px;
+    width: 200px; 
+  }
+  /*styling the top header section*/
+
+  h3{
+    color:#691b56
+  }
+
+
+  
+
+  .icon{
+    background-color: #691b56;
+    fill:white; 
+    display: inline-block; /* Ensure proper layout */
+    padding: 23px; /* Increase padding to make the background larger */
+    border-radius: 50%; /* Makes the background circular */
+    width: auto; /* Ensures the background adjusts to the padding */
+    height: auto; /* Ensures the background adjusts to the padding */
+  }
+  
+  .icon svg {
+    width: 16px; /* Keep the SVG icon small */
+    height: 16px; /* Keep the SVG icon small */
+  }
+    
+  
+  
