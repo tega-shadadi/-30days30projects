@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Page Registration</title>
+</head>
+<body>
+    <div id="step1">
+        <h2>Step 1: Personal Info</h2>
+        <input type="text" id="name" placeholder="Enter your name">
+        <button onclick="nextStep(1)">Next</button>
+    </div>
+
+    <div id="step2" style="display:none;">
+        <h2>Step 2: Contact Info</h2>
+        <input type="email" id="email" placeholder="Enter your email">
+        <button onclick="prevStep(2)">Back</button>
+        <button onclick="nextStep(2)">Next</button>
+    </div>
+
+    <div id="step3" style="display:none;">
+        <h2>Step 3: Password</h2>
+        <input type="password" id="password" placeholder="Enter your password">
+        <button onclick="prevStep(3)">Back</button>
+        <button onclick="submitForm()">Submit</button>
+    </div>
+
+    <script>
+        function nextStep(step) {
+            let data = JSON.parse(localStorage.getItem("formData")) || {};
+
+            if (step === 1) data.name = document.getElementById("name").value;
+            if (step === 2) data.email = document.getElementById("email").value;
+
+            localStorage.setItem("formData", JSON.stringify(data));
+
+            document.getElementById(`step${step}`).style.display = "none";
+            document.getElementById(`step${step + 1}`).style.display = "block";
+        }
+
+        function prevStep(step) {
+            document.getElementById(`step${step}`).style.display = "none";
+            document.getElementById(`step${step - 1}`).style.display = "block";
+        }
+
+        function submitForm() {
+            let data = JSON.parse(localStorage.getItem("formData")) || {};
+            data.password = document.getElementById("password").value;
+            localStorage.setItem("formData", JSON.stringify(data));
+
+            alert("Form submitted successfully! Data saved in Local Storage.");
+            console.log(data);  // For debugging
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typewriter Effect</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #222;
+            color: white;
+        }
+        .typewriter {
+            font-size: 24px;
+            border-right: 2px solid white;
+            white-space: nowrap;
+            overflow: hidden;
+            width: fit-content;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="typewriter"></div>
+
+    <script>
+        const textArray = ["Hello, World!", "Welcome to my site.", "Typing effect in JS."];
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const speed = 100; // Typing speed
+        const delay = 2000; // Delay before deleting
+
+        function typeEffect() {
+            let target = document.querySelector(".typewriter");
+            let currentText = textArray[textIndex];
+            
+            if (isDeleting) {
+                target.textContent = currentText.substring(0, charIndex--);
+            } else {
+                target.textContent = currentText.substring(0, charIndex++);
+            }
+
+            if (!isDeleting && charIndex === currentText.length) {
+                isDeleting = true;
+                setTimeout(typeEffect, delay);
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                textIndex = (textIndex + 1) % textArray.length;
+            }
+
+            setTimeout(typeEffect, isDeleting ? 50 : speed);
+        }
+
+        typeEffect();
+    </script>
+
+</body>
+</html>
