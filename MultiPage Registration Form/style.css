@@ -19,16 +19,28 @@ body {
     background-color: white;
     padding: 4%;
     border-radius: 10px;
-    width: 500px;
+    width: 400px;
     margin: 10px;
-    
+    position: relative;
   }
+
+  .progress-line {
+    position: absolute;
+    width: 75%;
+    height: 4px;
+    background: lightgray;
+    top: 50%;
+    left: 12%;
+    z-index: -1;
+    transition: width 0.3s ease;
+}
+
   
   
   .container span {
     display: inline-block; /* Ensures spans behave like inline elements */
     text-align: center; /* Centers the content inside each span */
-    margin: 0 10px; /* Adds spacing between spans */
+    margin: 0 5px; /* Adds spacing between spans */
   }
 
   .container span div {
@@ -40,7 +52,7 @@ body {
     align-items: center;
     gap: 20px; /* Adds space between child elements */
     justify-content: space-between;
-    width: 405px;
+    width: 375px;
     padding-left: 0px;
 
   }
@@ -62,13 +74,14 @@ body {
   }
 
   input{
-    width: 400px;
+    width: 370px;
     height:40px;
     border-radius: 5px;
     border-color: #dcdcdc;
     border: 1px solid #dcdcdc; /* Light gray border */
     box-shadow: none; /* Removes any default shadow */
     outline: none; /* Removes the default focus outline */
+    
     padding-left: 5px;
     padding-bottom: 0px;
     padding-top: 0px;
@@ -81,7 +94,7 @@ body {
     margin-right: 50px;
     margin-bottom: 20px;
     padding:5px 10px 5px 10px;
-    width: 160px;
+    width: 200px;
     background-color: #691b56;
     border: none;
     border-radius: 5px;
@@ -93,6 +106,7 @@ body {
     display: block; /* Makes the button take up the full width of its container */
     margin-top: 10px; /* Adds some space above the button */
     margin-left: auto;
+    
     
   }
 
@@ -154,6 +168,36 @@ body {
     width: 16px; /* Keep the SVG icon small */
     height: 16px; /* Keep the SVG icon small */
   }
+
+  .icon-fade {
+    opacity: 0.5;
+  }
     
+
   
+
+  .inactive {
+    display: none;
+  }
+
+  .step1 {
+    display: none;
+  }
+
+  .step2 {
+    display: none;
+  }
+  .step3 {
+    display: none;
+  }
+  .step4 {
+    display: none;
+  }
   
+  .active {
+    display: block;
+  }
+
+  .unfade {
+    opacity:1 ;
+  }

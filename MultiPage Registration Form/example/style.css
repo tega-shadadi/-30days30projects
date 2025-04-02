@@ -1,0 +1,71 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+}
+
+.progress-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.progress-line {
+  position: absolute;
+  width: 75%;
+  height: 4px;
+  background: lightgray;
+  top: 50%;
+  left: 12%;
+  z-index: -1;
+  transition: width 0.3s ease;
+}
+
+.step {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  background-color: lightgray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  margin: 0 20px;
+  transition: background-color 0.3s ease;
+}
+
+.step.active {
+  background-color: #4CAF50; /* Green when active */
+}
+
+.form-container {
+  max-width: 400px;
+  margin: auto;
+}
+
+.form-step {
+  display: none;
+}
+
+.form-step.active {
+  display: block;
+}
+
+button {
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
