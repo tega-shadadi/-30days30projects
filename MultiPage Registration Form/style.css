@@ -16,12 +16,15 @@ body {
 }
 
   .container{
-    background-color: white;
+    background-color: white;  
+    padding-top: 0px!important;
     padding: 4%;
     border-radius: 10px;
-    width: 400px;
+    width: 90%; /* Use a percentage for responsiveness */
+    max-width: 400px; /*limit the maximum width*/
     margin: 10px;
     position: relative;
+
   }
 
   .progress-line {
@@ -33,6 +36,33 @@ body {
     left: 12%;
     z-index: -1;
     transition: width 0.3s ease;
+}
+
+.icon-container {
+  display: flex;
+  justify-content: space-between; /* Evenly distribute icons */
+  align-items: center; /* Align icons vertically */
+  margin: 20px 0; /* Add spacing above and below the icons */
+  padding-top: 0px;
+}
+
+.icon-container span {
+  flex: 1; /* Ensure equal spacing between icons */
+  text-align: center; /* Center-align the content inside each span */
+}
+
+.icon-container span div {
+  display: inline-block; /* Prevent divs from breaking onto a new line */
+}
+
+.icon {
+  margin: 0 auto; /* Center the icon within its container */
+  padding: 20px; /* Add consistent padding around the icon */
+}
+
+.icon svg {
+  display: block;
+  margin: 0 auto; /* Center the SVG inside the icon */
 }
 
   
@@ -52,7 +82,7 @@ body {
     align-items: center;
     gap: 20px; /* Adds space between child elements */
     justify-content: space-between;
-    width: 375px;
+    max-width : 375px;
     padding-left: 0px;
 
   }
@@ -100,6 +130,7 @@ body {
     border-radius: 5px;
     height: 40px;
     color: white;
+    cursor: pointer;
   }
 
   .next-button {
@@ -144,6 +175,7 @@ body {
     fill: #691b56;
     height: 200px;
     width: 200px; 
+    cursor: pointer;
   }
   /*styling the top header section*/
 
@@ -200,4 +232,175 @@ body {
 
   .unfade {
     opacity:1 ;
+  }
+/*Responsiveness for different devices*/
+
+  @media (max-width: 768px) {
+    .container {
+      width: 95%;
+      padding: 5%;
+    }
+  
+    .icon {
+      padding: 15px;
+    }
+  
+    .icon svg {
+      width: 12px;
+      height: 12px;
+    }
+  
+    input {
+      width: 100%;
+    }
+  
+    button {
+      width: 100%;
+      margin-right: 0;
+    }
+  
+    .two-buttons {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .container {
+      padding: 5%;
+      border-radius: 5px;
+    }
+  
+    h2, h3 {
+      font-size: 18px;
+    }
+  
+    input {
+      font-size: 14px;
+      height: 35px;
+    }
+  
+    button {
+      font-size: 14px;
+      height: 35px;
+    }
+  
+    .icon {
+      padding: 10px;
+    }
+  
+    .icon svg {
+      width: 10px;
+      height: 10px;
+    }
+  }
+
+  @media (min-width: 1024px) and (max-width: 1440px) {
+    .container {
+      width: 80%; /* Adjust width for laptops */
+      padding: 3%; /* Slightly reduce padding */
+      max-width: 450px; /* Increase max width for larger screens */
+    }
+  
+    h2, h3 {
+      font-size: 20px; /* Slightly larger font size for headings */
+    }
+  
+    input {
+      font-size: 16px; /* Adjust input font size */
+      height: 40px; /* Keep input height consistent */
+    }
+  
+    button {
+      font-size: 16px; /* Adjust button font size */
+      height: 40px; /* Keep button height consistent */
+      width: 250px; /* Increase button width */
+    }
+  
+    .icon {
+      padding: 20px; /* Adjust padding for icons */
+    }
+  
+    .icon svg {
+      width: 20px; /* Slightly larger icons */
+      height: 20px;
+    }
+  
+    .two-buttons {
+      gap: 15px; /* Add more spacing between buttons */
+    }
+  }
+
+  @media (max-width: 360px) {
+    .container {
+      width: 95%; /* Adjust width for smaller screens */
+      padding: 5%; /* Add some padding */
+      border-radius: 5px; /* Reduce border radius */
+    }
+  
+    h2, h3 {
+      font-size: 16px; /* Reduce font size for headings */
+    }
+  
+    input {
+      font-size: 12px; /* Adjust input font size */
+      height: 30px; /* Reduce input height */
+    }
+  
+    button {
+      font-size: 12px; /* Adjust button font size */
+      height: 35px; /* Keep button height consistent */
+      width: 100%; /* Make buttons take full width */
+    }
+  
+    .icon {
+      padding: 8px; /* Reduce padding for icons */
+    }
+  
+    .icon svg {
+      width: 12px; /* Smaller icons */
+      height: 12px;
+    }
+  
+    .two-buttons {
+      flex-direction: column; /* Stack buttons vertically */
+      gap: 8px; /* Add spacing between buttons */
+    }
+  }
+
+  @media (max-width: 820px) {
+    .container {
+      width: 100%; /* Adjust width for iPad Air */
+      padding: 4%; /* Add some padding */
+      border-radius: 8px; /* Slightly reduce border radius */
+    }
+  
+    h2, h3 {
+      font-size: 18px; /* Adjust font size for headings */
+    }
+  
+    input {
+      font-size: 15px; /* Adjust input font size */
+      height: 38px; /* Adjust input height */
+      max-width: 98%;
+    }
+  
+    button {
+      font-size: 15px; /* Adjust button font size */
+      height: 38px; /* Adjust button height */
+      width: 220px; /* Adjust button width */
+    }
+  
+    .icon {
+      padding: 18px; /* Adjust padding for icons */
+    }
+  
+    .icon svg {
+      width: 18px; /* Slightly larger icons */
+      height: 18px;
+    }
+  
+    .two-buttons {
+      gap: 12px; /* Add spacing between buttons */
+    }
   }

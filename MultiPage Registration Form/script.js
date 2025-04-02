@@ -27,7 +27,8 @@ previousButton = document.querySelector(".previous-button")
 previousButton.addEventListener('click',()=>{
   console.log("previous clicked!!")
   document.querySelector(".step1").classList.toggle("active");
-  document.querySelector(".step2").classList.remove("active")
+  document.querySelector(".step2").classList.remove("active");
+  document.querySelector(".icon-person").classList.remove("unfade")
 })
 
 //third step
@@ -45,6 +46,7 @@ previousButton2.addEventListener('click',()=>{
   console.log("previous2 clicked!!")
   document.querySelector(".step2").classList.toggle("active");
   document.querySelector(".step3").classList.remove("active")
+  document.querySelector(".icon-planet").classList.remove("unfade")
 })
 
 //Last step: when you click checkmark
