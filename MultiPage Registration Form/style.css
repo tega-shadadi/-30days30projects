@@ -17,47 +17,55 @@ body {
 
   .container{
     background-color: white;  
-    padding-top: 0px!important;
+    padding-top: 0px !important ;
     padding: 4%;
     border-radius: 10px;
     width: 90%; /* Use a percentage for responsiveness */
     max-width: 400px; /*limit the maximum width*/
-    margin: 10px;
+    margin: 10px auto;
     position: relative;
+    min-width: 312px !important ;
 
   }
 
   .progress-line {
     position: absolute;
-    width: 75%;
+    top: 60%; /* Align with the center of the icons */
+    left: 0;
+    width: 0%; /* Start with 0% width */
     height: 4px;
-    background: lightgray;
-    top: 50%;
-    left: 12%;
-    z-index: -1;
-    transition: width 0.3s ease;
+    background-color: #691b56; /* Active progress color */
+    z-index: -1; /* Place it behind the icons */
+    transition: width 0.3s ease; /* Smooth transition */
+  
 }
 
 .icon-container {
+  list-style: none;
   display: flex;
   justify-content: space-between; /* Evenly distribute icons */
   align-items: center; /* Align icons vertically */
+  position: relative;
   margin: 20px 0; /* Add spacing above and below the icons */
   padding-top: 0px;
+  z-index: 1;
+  
+ 
 }
 
-.icon-container span {
+.icon-container li {
   flex: 1; /* Ensure equal spacing between icons */
   text-align: center; /* Center-align the content inside each span */
 }
 
-.icon-container span div {
+.icon-container li div {
   display: inline-block; /* Prevent divs from breaking onto a new line */
 }
 
 .icon {
   margin: 0 auto; /* Center the icon within its container */
   padding: 20px; /* Add consistent padding around the icon */
+  z-index: 2;
 }
 
 .icon svg {
@@ -67,7 +75,7 @@ body {
 
   
   
-  .container span {
+  .container li {
     display: inline-block; /* Ensures spans behave like inline elements */
     text-align: center; /* Centers the content inside each span */
     margin: 0 5px; /* Adds spacing between spans */
@@ -327,7 +335,11 @@ body {
     }
   
     .two-buttons {
-      gap: 15px; /* Add more spacing between buttons */
+      gap: 1px; /* Add more spacing between buttons */
+    }
+
+    .next-button2{
+     
     }
   }
 
@@ -402,5 +414,11 @@ body {
   
     .two-buttons {
       gap: 12px; /* Add spacing between buttons */
+    }
+  }
+
+  @media (max-width: 987px){
+    .input{
+      width: 350px;
     }
   }

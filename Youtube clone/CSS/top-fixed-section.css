@@ -1,0 +1,239 @@
+/* Reset default margins and paddings */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+body{
+  cursor: default;
+  font-family: Roboto,Arial;
+  
+}
+.top-fixed-section{
+  display:flex;
+  flex-direction: row; 
+  height: 56px;
+  
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px;
+  margin: 0px;
+  position: fixed;
+  top: 0; /* Align to the top */
+  left: 0; /* Align to the left */
+  z-index: 1000; /* Ensure it stays above other elements */
+  
+  
+  
+}
+
+.top-left-section{
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+  justify-content:space-between;
+  margin-right: 30px;
+  width: 160px;
+  height: 40px;
+  flex-shrink: 0;
+    
+  
+  
+}
+
+.hamburger-icon{ 
+  display: flex;
+  padding: 8px;
+  align-items: center;
+  border-radius: 20px;
+  cursor: pointer;
+ 
+}
+
+ .hamburger-icon:hover {
+  background-color: rgb(238, 238, 238); /* Change the background color on hover */
+}
+.youtube-logo-country-code{
+  position: relative;
+}
+.country-code{
+  position: absolute;
+  bottom:10px;
+  left:110px;
+  color: rgb(96, 96, 96);
+  font-size: 10px;
+  
+}
+.youtube-logo{
+  
+  margin-left: 10px;
+  height: 20px;
+  width: 100px; 
+  cursor: pointer;
+}
+
+.top-middle-section{
+  display: flex;
+  align-items: center;
+  width: 655px;
+  justify-content: space-between;
+
+}
+
+.input-search-button-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+ 
+
+
+}
+
+.input-search{
+  
+    
+    height: 40px;
+    padding-right: 12px;
+    padding-left: 16px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border: 1px solid rgb(211, 211, 211);
+    font-size: 16px;
+    width: 100%;
+    min-width: 10%;
+    
+    box-shadow: rgb(238, 238, 238) 0px 1px 2px 0px inset;
+    box-sizing: border-box;
+    background-color: white;
+    line-height: 40px;
+    text-align: left; /* or remove this line entirely */
+  
+  
+
+  
+
+}
+.input-search:focus {
+  outline: none; /* Remove the default focus outline */
+  border-color: rgb(211, 211, 211); /* Optional: Add a custom border color on focus */
+  box-shadow: 0px 0px 5px rgb(211, 211, 211); /* Optional: Add a subtle glow effect */
+}
+.search-button{
+  height: 40px;
+  background-color: rgb(248, 248, 248);
+  border-color: rgb(211, 211, 211);
+  border:0.5px solid rgb(211, 211, 211) ;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  width: 64px;
+  border-left-width: 0px;
+  transition: rgb(230, 230, 230) 0.3s ease;
+  cursor: pointer;
+
+}
+.search-button:hover{
+  background-color: rgb(230, 230, 230);
+  cursor: pointer;
+}
+.search-icon{
+  padding-left: 15px;
+  cursor: pointer;
+}
+
+.voice-search-icon{
+  background-color: rgb(238, 238, 238);
+  padding: 8px;
+  border-radius: 32px;
+  min-width: 26px;
+  margin-left: 15px;
+  cursor: pointer;
+  
+}
+.create-container:hover,.voice-search-icon:hover{
+  background-color: rgb(230, 230, 230);
+  transition: rgb(230, 230, 230) 0.3s ease;
+  cursor: pointer;
+}
+
+
+
+.create-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color:rgb(238, 238, 238);
+  border-top-right-radius: 18px;
+  border-top-left-radius:18px;
+  border-bottom-right-radius: 18px;
+  border-bottom-left-radius: 18px;
+  height: 36px;
+  width: 98px;
+}
+.create-container:hover{
+
+}
+
+.plus-icon{
+  padding-left: 16px;
+}
+.create-text{
+  padding-right: 16px;
+  font-size: 14px;
+  font-weight: 500px;
+  text-align: center;
+}
+
+.notification-container{
+  display: flex;
+  align-items: center;
+  position: relative;
+  
+}
+
+.notification-icon{
+  cursor: pointer; 
+  padding: 8px;
+  border-radius: 32px;
+  
+}
+.notification-icon:hover{
+  background-color: rgb(230, 230, 230);
+  pointer-events: auto;
+  transition: rgb(230, 230, 230) 0.3s ease;
+  padding: 8px;
+  border-radius: 32px;
+}
+
+.notification-number{
+  text-align: center;
+  background-color: rgb(225, 0, 45);
+  border-radius: 22px;
+  padding: 2px;
+  height: 13px;
+  width:16px;
+  color: white;
+  position: absolute;
+  font-size: small;
+  bottom: 5px;
+  left:18px;
+  right:0;
+  cursor: pointer;
+  font-size: 12px;
+  z-index: 1000; 
+}
+
+
+.current-user-profile{
+  height: 32px ;
+  width: 32px;
+  border-radius: 16px;
+  cursor: pointer;
+  
+}
+.current-user-profile:hover{
+  background-color: rgb(238, 238, 238); /* Change the background color on hover */
+}
