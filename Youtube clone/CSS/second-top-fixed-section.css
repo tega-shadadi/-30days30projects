@@ -1,0 +1,19 @@
+.feed-filter-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 280px;
+}
+.feed-suggestion{
+  text-align: center;
+  background-color: rgb(238, 238, 238);
+  font-size: 14px;
+  line-height: 20px;
+  border-radius: 8px;
+  padding: 8px 12px 8px 12px;
+  margin-right: 12px;
+  height: 15px;
+  white-space: nowrap;
+  
+
+}
