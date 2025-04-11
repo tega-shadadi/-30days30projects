@@ -1,0 +1,59 @@
+.side-bar-nav-section{
+  display: inline-block;
+  justify-items:start;
+  margin-top: 70px;
+  margin-left: 12px;
+
+}
+.icon-container{
+  display: flex;
+  align-items: center;
+  justify-content:start;
+  
+  
+  width: 100%;
+  border-radius: 10px;
+  line-height: 20px;
+  height: 40px;
+  width: 180px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+.icon-container:hover{
+  background-color: rgb(238, 238, 238);
+  transition: rgb(238, 238, 238) 0.3s ease;
+  cursor: pointer;
+}
+
+.icon-container p{
+  font-size: 14px;
+  line-height: 20px;
+  margin-left: 24px;
+}
+
+.words{
+  margin-left: 15px;
+}
+
+.channel-profile-pic img{
+  height: 24px;
+  width: 24px;
+  border-radius: 12px;
+}
+.channel-profile-pic{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.channel-profile-pic svg{
+  fill: rgb(225, 0, 45);
+}
+
+.gray-horizontal-line{
+  height: 1px;
+  background-color:rgb(238, 238, 238);
+  width: 100%;
+  margin:10px 0px;
+
+}
