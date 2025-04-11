@@ -1,16 +1,24 @@
+
 /* Reset default margins and paddings */
 html, body {
   margin: 0;
   padding: 0;
-  width: 100%;
+  width: 100%; /* fill available space below top margin */
+  position: fixed;
   height: 100%;
+  overflow: hidden;
+  overflow-y: auto;
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: black transparent;
 }
 body{
   cursor: default;
   font-family: Roboto,Arial;
+  overflow: hidden;
   
 }
 .top-section{
+  margin-top: 0px;
   position: fixed;
   width: 100%;
 }

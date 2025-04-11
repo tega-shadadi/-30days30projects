@@ -3,6 +3,8 @@
   justify-items:start;
   margin-top: 70px;
   margin-left: 12px;
+  position: fixed;
+  overflow: auto;
 
 }
 .icon-container{
